@@ -1,0 +1,8 @@
+-Need button to clear and ask for new size
+-options for
+  -random RGB Value
+  -black
+  -add 10% black
+
+-create grid of divs that is size X size
+-fix shake animation, maybe have it decrease by 10% $("#drawbox").animate({backgroundColor: "#ff0000"}, 5000);
