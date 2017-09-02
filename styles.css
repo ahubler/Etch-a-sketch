@@ -32,34 +32,31 @@ body{
   display: inline-block;
   position:absolute;
   margin: 0px;
-  height: 105px;
-  width: 105px;
-  border-style:dotted;
-  border-width: 1px;
-  border-color: 	black;
-  background-color: 	#F9F6FA;
   border-radius: 360px;
   -moz-border-radius: 360px;
   -webkit-border-radius: 360px;
 }
-.inner_knob{
+.outer-Knob{
+    height: 105px;
+    width: 105px;
+    border-style:dotted;
+    border-width: 1px;
+    border-color: 	black;
+    background-color: 	#F9F6FA;
+}
+.inner-knob{
   position:absolute;
   height: 85px;
   width: 85px;
-  border-width: 1px;
   background-color: #f4eff6;
-  border-color: #f4eff6;
-  border-radius: 360px;
-  -moz-border-radius: 360px;
-  -webkit-border-radius: 360px;
   top:10px;
   left:10px;
 }
-#left_knob{
+#left-knob{
   top: 430px;
   left: -88px;
 }
-#right_knob{
+#right-knob{
   top: 430px;
   left: 580px;
 }
