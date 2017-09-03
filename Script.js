@@ -12,8 +12,33 @@ function buildGrid(){
                                 width : pixelWidth
                               });
   $("#drawbox").empty();//removes any existing pixels
-  for(i = 1; i <= gridSize * gridSize; i++){
+  var totalSize = gridSize * gridSize;
+  for(i = 1; i <= totalSize; i++){
     $("#drawbox").append($(pixel).clone());
+    if(i === 1){$(".pixel").last().css({
+                                        "border-radius": "30px 0px 0px 0px",
+                                        "-moz-border-radius": "30px 0px 0px 0px",
+                                        "-webkit-border-radius": "30px 0px 0px 0px"
+                                        })
+    }
+    else if(i === gridSize){$(".pixel").last().css({
+                                        "border-radius": "0px 30px 0px 0px",
+                                        "-moz-border-radius": "0px 30px 0px 0px",
+                                        "-webkit-border-radius": "0px 30px 0px 0px"
+                                        })
+    }
+    else if(i === totalSize - gridSize +1){$(".pixel").last().css({
+                                        "border-radius": "0px 0px 0px 30px",
+                                        "-moz-border-radius": "0px 0px 0px 30px",
+                                        "-webkit-border-radius": "0px 0px 0px 30px"
+                                        })
+    }
+    else if(i === totalSize ){$(".pixel").last().css({
+                                        "border-radius": "0px 0px 30px 0px",
+                                        "-moz-border-radius": "0px 0px 30px 0px",
+                                        "-webkit-border-radius": "0px 0px 30px 0px"
+                                        })
+    }
   }
   return;
 }
