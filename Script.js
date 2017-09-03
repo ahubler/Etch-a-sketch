@@ -2,14 +2,13 @@ var gridSize = 10;//stores the size of the drawimg grid
 var drawStyle = "black";//stores the current drawing style
 
 function buildGrid(){
-  //Compute the height and width of each new div by dividing
-  //the height and width of the drawBox div by the gridSize
-  var pixelHeight = $("#drawbox").innerHeight() / gridSize;
-  var pixelWidth = $("#drawbox").innerWidth() / gridSize;
+  //Compute the percentage height and width of each new div by
+  //100 by the gridSize
+  var pixelSizePercent = 100 / gridSize;
   var pixel = $("<div></div>",{
                                 class : "pixel",
-                                height : pixelHeight,
-                                width : pixelWidth
+                                height : pixelSizePercent + "%",
+                                width : pixelSizePercent + "%"
                               });
   $("#drawbox").empty();//removes any existing pixels
   var totalSize = gridSize * gridSize;
@@ -19,25 +18,25 @@ function buildGrid(){
                                         "border-radius": "30px 0px 0px 0px",
                                         "-moz-border-radius": "30px 0px 0px 0px",
                                         "-webkit-border-radius": "30px 0px 0px 0px"
-                                        })
+                                      });
     }
-    else if(i === gridSize){$(".pixel").last().css({
+    else if(i == gridSize){$(".pixel").last().css({
                                         "border-radius": "0px 30px 0px 0px",
                                         "-moz-border-radius": "0px 30px 0px 0px",
                                         "-webkit-border-radius": "0px 30px 0px 0px"
-                                        })
+                                       });
     }
     else if(i === totalSize - gridSize +1){$(".pixel").last().css({
                                         "border-radius": "0px 0px 0px 30px",
                                         "-moz-border-radius": "0px 0px 0px 30px",
                                         "-webkit-border-radius": "0px 0px 0px 30px"
-                                        })
+                                       });
     }
     else if(i === totalSize ){$(".pixel").last().css({
                                         "border-radius": "0px 0px 30px 0px",
                                         "-moz-border-radius": "0px 0px 30px 0px",
                                         "-webkit-border-radius": "0px 0px 30px 0px"
-                                        })
+                                       });
     }
   }
   return;
